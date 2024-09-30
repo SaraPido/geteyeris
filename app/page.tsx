@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ChevronRight, MessageSquare, FileText, Camera, Phone, Menu } from 'lucide-react'
+import { ChevronRight, Menu } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
@@ -14,9 +14,7 @@ export default function LandingPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission here
     console.log('Form submitted:', { email, message })
-    // Reset form fields
     setEmail('')
     setMessage('')
   }
@@ -30,9 +28,9 @@ export default function LandingPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-100 to-white">
+    <div className="min-h-screen bg-black text-white">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-50 backdrop-blur-md">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
             <Image
@@ -42,14 +40,14 @@ export default function LandingPage() {
               height={40}
               className="object-contain"
             />
-            <span className="text-2xl font-bold text-gray-800">Eyeris</span>
+            <span className="text-2xl font-bold text-white">Eyeris</span>
           </Link>
           <nav className="hidden md:flex space-x-4">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-gray-300 hover:text-white transition-colors"
               >
                 {item.name}
               </Link>
@@ -62,13 +60,13 @@ export default function LandingPage() {
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right">
+            <SheetContent side="right" className="bg-gray-900 text-white">
               <nav className="flex flex-col space-y-4 mt-6">
                 {navItems.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="text-gray-600 hover:text-gray-900 transition-colors"
+                    className="text-gray-300 hover:text-white transition-colors"
                   >
                     {item.name}
                   </Link>
@@ -80,65 +78,63 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-20 mt-16 text-center">
-        <motion.h1 
-          className="text-5xl font-bold mb-6"
-          initial={{ opacity: 0, y: -20 }}
+      <section className="container mx-auto px-4 py-20 mt-16 text-center relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-900 to-blue-900 opacity-20 blur-3xl"></div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.8 }}
+          className="relative z-10"
         >
-          Empower Your Hands-On Profession with Eyeris
-        </motion.h1>
-        <motion.p 
-          className="text-xl mb-8"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          Smart glasses that revolutionize the way you work with AI-powered assistance and seamless documentation
-        </motion.p>
-        <Button size="lg">
-          Discover Eyeris <ChevronRight className="ml-2 h-4 w-4" />
-        </Button>
+          <h1 className="text-8xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400">
+            Eyeris
+          </h1>
+          <p className="text-xl mb-8 text-gray-300">
+            Empower your hands-on profession with smart glasses
+          </p>
+          <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white">
+            Discover Eyeris <ChevronRight className="ml-2 h-4 w-4" />
+          </Button>
+        </motion.div>
       </section>
 
       {/* Features Section */}
-      <section id="features" className="bg-gray-100 py-20">
+      <section id="features" className="py-20 bg-gray-900">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-12 text-center">Key Features</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               { 
-                icon: MessageSquare, 
+                icon: "💬",
                 title: "AI-Powered Assistance", 
                 description: "Ask short questions and receive instant vocal answers, enhancing your decision-making process on the job."
               },
               { 
-                icon: FileText, 
+                icon: "📝",
                 title: "Speech-to-Text & Summarization", 
                 description: "Automatically convert recordings into structured documentation, saving time on report writing and improving accuracy."
               },
               { 
-                icon: Camera, 
+                icon: "📷",
                 title: "Photo/Video Integration", 
                 description: "Capture and integrate visual data into your documentation using advanced computer vision techniques for comprehensive reports."
               },
               { 
-                icon: Phone, 
+                icon: "📞",
                 title: "Live Consultation", 
                 description: "Initiate video calls for real-time expert advice, with the ability to record and save consultation details for future reference."
               }
             ].map((feature, index) => (
               <motion.div 
                 key={index} 
-                className="bg-white p-6 rounded-lg shadow-md"
+                className="bg-gray-800 p-6 rounded-lg shadow-md"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <feature.icon className="h-12 w-12 mb-4 text-blue-600" />
+                <div className="text-4xl mb-4">{feature.icon}</div>
                 <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <p className="text-gray-400">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -146,7 +142,7 @@ export default function LandingPage() {
       </section>
 
       {/* Industries Section */}
-      <section id="industries" className="py-20">
+      <section id="industries" className="py-20 bg-black">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-12 text-center">Industries We Serve</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -160,13 +156,13 @@ export default function LandingPage() {
             ].map((industry, index) => (
               <motion.div 
                 key={index} 
-                className="bg-gray-100 p-6 rounded-lg"
+                className="bg-gray-900 p-6 rounded-lg"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
               >
-                <h3 className="text-xl font-semibold mb-2">{industry.name}</h3>
-                <p className="text-gray-600">{industry.description}</p>
+                <h3 className="text-xl font-semibold mb-2 text-purple-400">{industry.name}</h3>
+                <p className="text-gray-400">{industry.description}</p>
               </motion.div>
             ))}
           </div>
@@ -174,7 +170,7 @@ export default function LandingPage() {
       </section>
 
       {/* Contact Form */}
-      <section id="contact" className="py-20">
+      <section id="contact" className="py-20 bg-gray-900">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-12 text-center">Get in Touch</h2>
           <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
@@ -185,6 +181,7 @@ export default function LandingPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                className="bg-gray-800 text-white border-gray-700"
               />
             </div>
             <div className="mb-4">
@@ -194,9 +191,10 @@ export default function LandingPage() {
                 onChange={(e) => setMessage(e.target.value)}
                 required
                 rows={4}
+                className="bg-gray-800 text-white border-gray-700"
               />
             </div>
-            <Button type="submit" className="w-full">
+            <Button type="submit" className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white">
               Send Message
             </Button>
           </form>
@@ -204,7 +202,7 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-8">
+      <footer className="bg-black text-white py-8">
         <div className="container mx-auto px-4 text-center">
           <p>&copy; 2023 Eyeris. All rights reserved.</p>
         </div>
