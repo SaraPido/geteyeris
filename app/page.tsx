@@ -1,4 +1,5 @@
 "use client"
+
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ChevronRight, Menu } from 'lucide-react'
@@ -61,13 +62,13 @@ export default function LandingPage() {
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="bg-gray-900 text-white">
+            <SheetContent>
               <nav className="flex flex-col space-y-4 mt-6">
                 {navItems.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="text-gray-300 hover:text-white transition-colors"
+                    className="text-gray-600 hover:text-gray-900 transition-colors"
                   >
                     {item.name}
                   </Link>
