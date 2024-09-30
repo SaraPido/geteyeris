@@ -149,4 +149,66 @@ export default function LandingPage() {
           <h2 className="text-3xl font-bold mb-12 text-center">Industries We Serve</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { name: "Healthcare", description: "Improve patient care
+              { name: "Healthcare", description: "Improve patient care with hands-free access to medical records and expert consultations." },
+              { name: "Manufacturing", description: "Enhance quality control and streamline processes with AI-assisted visual inspections." },
+              { name: "Construction", description: "Boost on-site safety and efficiency with real-time project documentation and expert guidance." },
+              { name: "Field Service", description: "Provide superior customer service with instant access to technical information and remote support." },
+              { name: "Logistics", description: "Optimize inventory management and order fulfillment with computer vision and AI assistance." },
+              { name: "Education", description: "Facilitate immersive learning experiences and hands-on training with augmented reality." }
+            ].map((industry, index) => (
+              <motion.div 
+                key={index} 
+                className="bg-gray-900 p-6 rounded-lg"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+              >
+                <h3 className="text-xl font-semibold mb-2 text-purple-400">{industry.name}</h3>
+                <p className="text-gray-400">{industry.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form */}
+      <section id="contact" className="py-20 bg-gray-900">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-12 text-center">Get in Touch</h2>
+          <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
+            <div className="mb-4">
+              <Input
+                type="email"
+                placeholder="Your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="bg-gray-800 text-white border-gray-700"
+              />
+            </div>
+            <div className="mb-4">
+              <Textarea
+                placeholder="Your message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                required
+                rows={4}
+                className="bg-gray-800 text-white border-gray-700"
+              />
+            </div>
+            <Button type="submit" className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white">
+              Send Message
+            </Button>
+          </form>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-black text-white py-8">
+        <div className="container mx-auto px-4 text-center">
+          <p>&copy; 2023 Eyeris. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+  )
+}
