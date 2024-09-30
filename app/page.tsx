@@ -1,14 +1,13 @@
 "use client"
-
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ChevronRight, Menu } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Button } from "../components/ui/button"
+import { Input } from "../components/ui/input"
+import { Textarea } from "../components/ui/textarea"
+import { Sheet, SheetContent, SheetTrigger } from "../components/ui/sheet"
 
 export default function LandingPage() {
   const [email, setEmail] = useState('')
