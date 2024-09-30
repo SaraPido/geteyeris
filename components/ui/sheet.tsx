@@ -9,22 +9,43 @@ export function Sheet({ children }: SheetProps) {
 
   return (
     <div>
-      {children}
-      {isOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50">
-          <div className="absolute right-0 top-0 bottom-0 w-64 bg-white p-4">
-            <button onClick={() => setIsOpen(false)}>Close</button>
-          </div>
-        </div>
-      )}
+      {React.Children.map(children, child => {
+        if (React.isValidElement(child) && child.type === SheetTrigger) {
+          return React.cloneElement(child, { onClick: () => setIsOpen(true) })
+        }
+        if (React.isValidElement(child) && child.type === SheetContent) {
+          return isOpen ? React.cloneElement(child, { onClose: () => setIsOpen(false) }) : null
+        }
+        return child
+      })}
     </div>
   )
 }
 
-export function SheetTrigger({ children }: { children: React.ReactNode }) {
-  return children
+interface SheetTriggerProps {
+  children: React.ReactNode
+  asChild?: boolean
 }
 
-export function SheetContent({ children }: { children: React.ReactNode }) {
-  return <div>{children}</div>
+export function SheetTrigger({ children, asChild }: SheetTriggerProps) {
+  if (asChild && React.isValidElement(children)) {
+    return React.cloneElement(children, { onClick: children.props.onClick })
+  }
+  return <button onClick={children.props.onClick}>{children}</button>
+}
+
+interface SheetContentProps {
+  children: React.ReactNode
+  onClose?: () => void
+}
+
+export function SheetContent({ children, onClose }: SheetContentProps) {
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-50">
+      <div className="absolute right-0 top-0 bottom-0 w-64 bg-white p-4">
+        <button onClick={onClose}>Close</button>
+        {children}
+      </div>
+    </div>
+  )
 }
