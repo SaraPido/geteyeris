@@ -5,31 +5,31 @@ const teamMembers = [
     name: 'Chiara Plizzari',
     role: 'Researcher',
     company: 'Google',
-    image: '../../images/chiara.jpeg'
+    image: '/images/chiara.jpeg'
   },
   {
     name: 'Sara Pidò',
     role: 'Postdoc',
     company: 'MIT',
-    image: '../../images/sara2.jpeg'
+    image: '/images/sara.jpeg'
   },
   {
     name: 'Gabriele Goletto',
     role: 'PhD',
     company: 'Politecnico di Torino',
-    image: '../../images/gabri.jpeg'
+    image: '/images/gabriele.jpeg'
   },
   {
     name: 'Maëlle-Marie Troadec',
     role: 'Strategy consultant',
     company: 'PwC',
-    image: '../../images/maelle.jpeg'
+    image: '/images/maelle.jpeg'
   },
   {
     name: 'Jacopo Faini',
     role: 'Program Manager',
     company: 'Bocconi',
-    image: '../../images/jacopo.jpeg'
+    image: '/images/jacopo.jpeg'
   }
 ]
 
@@ -61,7 +61,7 @@ export default function TeamPage() {
       
       <div className="absolute bottom-4 right-4 w-24 h-24">
         <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Mw0YDEi8wYToFfFMl45JSCVp0Bxfx6.png#logo"
+          src="/images/eyeris.png"
           alt="EyeRis Logo"
           width={96}
           height={96}
