@@ -5,31 +5,31 @@ const teamMembers = [
     name: 'Chiara Plizzari',
     role: 'Researcher',
     company: 'Google',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Mw0YDEi8wYToFfFMl45JSCVp0Bxfx6.png#chiara'
-  },
-  {
-    name: 'Gabriele Goletto',
-    role: 'PhD',
-    company: 'Politecnico di Torino',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Mw0YDEi8wYToFfFMl45JSCVp0Bxfx6.png#gabriele'
+    image: '../../images/chiara.jpeg'
   },
   {
     name: 'Sara Pidò',
     role: 'Postdoc',
     company: 'MIT',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Mw0YDEi8wYToFfFMl45JSCVp0Bxfx6.png#sara'
+    image: '../../images/sara2.jpeg'
+  },
+  {
+    name: 'Gabriele Goletto',
+    role: 'PhD',
+    company: 'Politecnico di Torino',
+    image: '../../images/gabri.jpeg'
   },
   {
     name: 'Maëlle-Marie Troadec',
     role: 'Strategy consultant',
     company: 'PwC',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Mw0YDEi8wYToFfFMl45JSCVp0Bxfx6.png#maelle'
+    image: '../../images/maelle.jpeg'
   },
   {
     name: 'Jacopo Faini',
     role: 'Program Manager',
     company: 'Bocconi',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Mw0YDEi8wYToFfFMl45JSCVp0Bxfx6.png#jacopo'
+    image: '../../images/jacopo.jpeg'
   }
 ]
 

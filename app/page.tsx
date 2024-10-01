@@ -23,7 +23,7 @@ export default function LandingPage() {
         <div className="container mx-auto flex justify-between items-center">
           <Link href="/" className="flex items-center space-x-2">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Mw0YDEi8wYToFfFMl45JSCVp0Bxfx6.png#logo"
+              src="../images/eyeris.png"
               alt="Eyeris Logo"
               width={40}
               height={40}
