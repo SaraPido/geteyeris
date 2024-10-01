@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { MessageSquare, FileText, Camera, Phone, Menu, ChevronRight } from 'lucide-react'
+import { ChevronRight, Menu } from 'lucide-react'
 
 export default function LandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -80,11 +80,11 @@ export default function LandingPage() {
       <main className="pt-20">
         {/* Hero Section */}
         <section className="container mx-auto px-4 py-20 text-center">
-          <h1 className="text-6xl font-bold mb-6">Eyeris</h1>
+          <h1 className="text-8xl font-bold mb-6">Eyeris</h1>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Empower your hands-on profession with smart glasses
           </p>
-          <button className="bg-white text-black px-6 py-2 rounded-full flex items-center mx-auto hover:bg-gray-200 transition-colors">
+          <button className="bg-white text-black px-6 py-3 rounded-full flex items-center mx-auto hover:bg-gray-200 transition-colors text-lg font-semibold">
             Discover Eyeris <ChevronRight className="ml-2" />
           </button>
         </section>
@@ -92,34 +92,34 @@ export default function LandingPage() {
         {/* Features Section */}
         <section id="features" className="py-20 bg-gray-900">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-12 text-center">Key Features</h2>
+            <h2 className="text-4xl font-bold mb-12 text-center">Key Features</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
               {[
                 { 
-                  icon: MessageSquare,
+                  icon: "💬",
                   title: "AI-Powered Assistance", 
                   description: "Ask short questions and receive instant vocal answers, enhancing your decision-making process on the job."
                 },
                 { 
-                  icon: FileText,
+                  icon: "📝",
                   title: "Speech-to-Text & Summarization", 
                   description: "Automatically convert recordings into structured documentation, saving time on report writing and improving accuracy."
                 },
                 { 
-                  icon: Camera,
+                  icon: "📷",
                   title: "Photo/Video Integration", 
                   description: "Capture and integrate visual data into your documentation using advanced computer vision techniques for comprehensive reports."
                 },
                 { 
-                  icon: Phone,
+                  icon: "📞",
                   title: "Live Consultation", 
                   description: "Initiate video calls for real-time expert advice, with the ability to record and save consultation details for future reference."
                 }
               ].map((feature, index) => (
                 <div key={index} className="flex items-start">
-                  <feature.icon className="h-8 w-8 mr-4 text-purple-400 flex-shrink-0" />
+                  <div className="text-4xl mr-4 text-purple-400">{feature.icon}</div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+                    <h3 className="text-xl font-semibold mb-2 text-purple-400">{feature.title}</h3>
                     <p className="text-gray-400">{feature.description}</p>
                   </div>
                 </div>
@@ -131,7 +131,7 @@ export default function LandingPage() {
         {/* Industries Section */}
         <section id="industries" className="py-20">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-12 text-center">Industries We Serve</h2>
+            <h2 className="text-4xl font-bold mb-12 text-center">Industries We Serve</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {[
                 { name: "Healthcare", description: "Improve patient care with hands-free access to medical records and expert consultations." },
