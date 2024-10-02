@@ -91,9 +91,9 @@ export default function LandingPage() {
 
         {/* Features Section */}
         <section id="features" className="py-20 bg-gray-900">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-4xl font-bold mb-12 text-center">Key Features</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               {[
                 { 
                   icon: "💬",
@@ -130,9 +130,9 @@ export default function LandingPage() {
 
         {/* Industries Section */}
         <section id="industries" className="py-20">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-4xl font-bold mb-12 text-center">Industries We Serve</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 { name: "Healthcare", description: "Improve patient care with hands-free access to medical records and expert consultations." },
                 { name: "Manufacturing", description: "Enhance quality control and streamline processes with AI-assisted visual inspections." },
