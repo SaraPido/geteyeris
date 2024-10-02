@@ -3,11 +3,9 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ChevronRight, Menu } from 'lucide-react'
+import { ChevronRight } from 'lucide-react'
 
 export default function LandingPage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'Features', href: '#features' },
@@ -31,7 +29,7 @@ export default function LandingPage() {
             />
             <span className="text-2xl font-bold text-purple-400">Eyeris</span>
           </Link>
-          <nav className="hidden md:flex space-x-6">
+          <nav className="flex space-x-6">
             {navItems.map((item) => (
               <Link
                 key={item.name}
@@ -42,44 +40,13 @@ export default function LandingPage() {
               </Link>
             ))}
           </nav>
-          <button 
-            className="md:hidden text-white"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <Menu className="h-6 w-6" />
-            <span className="sr-only">Toggle navigation menu</span>
-          </button>
         </div>
       </header>
 
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-90 md:hidden">
-          <div className="flex flex-col items-center justify-center h-full">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-white hover:text-purple-400 transition-colors py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-            <button
-              className="mt-4 text-white hover:text-purple-400 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
-
       {/* Main Content */}
-      <main className="pt-20">
+      <main className="pt-24 flex justify-center items-center">
         {/* Hero Section */}
-        <section className="container mx-auto px-4 py-20 text-center">
+        <section className="flex flex-col items-center justify-center text-center w-full max-w-4xl px-4 py-20">
           <h1 className="text-6xl md:text-8xl font-bold mb-6">Eyeris</h1>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Empower your hands-on profession with smart glasses
@@ -90,8 +57,8 @@ export default function LandingPage() {
         </section>
 
         {/* Features Section */}
-        <section id="features" className="py-20 bg-gray-900">
-          <div className="container mx-auto px-4 max-w-4xl">
+        <section id="features" className="py-20 bg-gray-900 w-full flex justify-center">
+          <div className="w-full max-w-4xl px-4">
             <h2 className="text-4xl font-bold mb-12 text-center">Key Features</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               {[
@@ -129,8 +96,8 @@ export default function LandingPage() {
         </section>
 
         {/* Industries Section */}
-        <section id="industries" className="py-20">
-          <div className="container mx-auto px-4 max-w-6xl">
+        <section id="industries" className="py-20 w-full flex justify-center">
+          <div className="w-full max-w-6xl px-4">
             <h2 className="text-4xl font-bold mb-12 text-center">Industries We Serve</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
@@ -152,8 +119,8 @@ export default function LandingPage() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8">
-        <div className="container mx-auto px-4 text-center">
+      <footer className="bg-gray-900 text-white py-8 w-full flex justify-center">
+        <div className="max-w-4xl text-center">
           <p>&copy; 2023 Eyeris. All rights reserved.</p>
         </div>
       </footer>
