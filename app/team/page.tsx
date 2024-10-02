@@ -11,13 +11,13 @@ const teamMembers = [
     name: 'Sara Pidò',
     role: 'Postdoc',
     company: 'MIT',
-    image: '/images/sara.jpeg'
+    image: '/images/sara.JPG'
   },
   {
     name: 'Gabriele Goletto',
     role: 'PhD',
     company: 'Politecnico di Torino',
-    image: '/images/gabriele.jpeg'
+    image: '/images/gabri.jpeg'
   },
   {
     name: 'Maëlle-Marie Troadec',
