@@ -18,7 +18,7 @@ export default function LandingPage() {
     <div className="min-h-screen bg-black text-white">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-90">
-        <div className="container mx-auto px-4 py-4 flex justify-center items-center">
+        <div className="container mx-auto flex justify-between items-center px-6 py-4 max-w-screen-lg">
           <Link href="/" className="flex items-center space-x-2">
             <Image
               src="/images/eyeris.png"
@@ -29,7 +29,7 @@ export default function LandingPage() {
             />
             <span className="text-2xl font-bold text-purple-400">Eyeris</span>
           </Link>
-          <nav className="flex space-x-6">
+          <nav className="flex space-x-6 text-white">
             {navItems.map((item) => (
               <Link
                 key={item.name}
@@ -44,7 +44,7 @@ export default function LandingPage() {
       </header>
 
       {/* Main Content */}
-      <main className="pt-24 flex justify-center items-center">
+      <main className="pt-24 flex flex-col items-center">
         {/* Hero Section */}
         <section className="flex flex-col items-center justify-center text-center w-full max-w-4xl px-4 py-20">
           <h1 className="text-6xl md:text-8xl font-bold mb-6">Eyeris</h1>
@@ -56,11 +56,11 @@ export default function LandingPage() {
           </button>
         </section>
 
-        {/* Features Section */}
+        {/* Key Features Section */}
         <section id="features" className="py-20 bg-gray-900 w-full flex justify-center">
-          <div className="w-full max-w-4xl px-4">
+          <div className="container max-w-4xl px-4">
             <h2 className="text-4xl font-bold mb-12 text-center">Key Features</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="grid grid-cols-2 gap-12">
               {[
                 { 
                   icon: "💬",
@@ -83,7 +83,7 @@ export default function LandingPage() {
                   description: "Initiate video calls for real-time expert advice, with the ability to record and save consultation details for future reference."
                 }
               ].map((feature, index) => (
-                <div key={index} className="flex items-start justify-center">
+                <div key={index} className="flex items-start">
                   <div className="text-4xl mr-4 text-purple-400">{feature.icon}</div>
                   <div>
                     <h3 className="text-xl font-semibold mb-2 text-purple-400">{feature.title}</h3>
@@ -97,9 +97,9 @@ export default function LandingPage() {
 
         {/* Industries Section */}
         <section id="industries" className="py-20 w-full flex justify-center">
-          <div className="w-full max-w-6xl px-4">
+          <div className="container max-w-6xl px-4">
             <h2 className="text-4xl font-bold mb-12 text-center">Industries We Serve</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 { name: "Healthcare", description: "Improve patient care with hands-free access to medical records and expert consultations." },
                 { name: "Manufacturing", description: "Enhance quality control and streamline processes with AI-assisted visual inspections." },
@@ -108,7 +108,7 @@ export default function LandingPage() {
                 { name: "Logistics", description: "Optimize inventory management and order fulfillment with computer vision and AI assistance." },
                 { name: "Education", description: "Facilitate immersive learning experiences and hands-on training with augmented reality." }
               ].map((industry, index) => (
-                <div key={index} className="bg-gray-900 p-6 rounded-lg">
+                <div key={index} className="bg-gray-800 p-6 rounded-lg text-white">
                   <h3 className="text-xl font-semibold mb-2 text-purple-400">{industry.name}</h3>
                   <p className="text-gray-400">{industry.description}</p>
                 </div>
@@ -117,6 +117,7 @@ export default function LandingPage() {
           </div>
         </section>
       </main>
+      
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8 w-full flex justify-center">
@@ -125,5 +126,5 @@ export default function LandingPage() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
