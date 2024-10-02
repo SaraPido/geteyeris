@@ -20,7 +20,7 @@ export default function LandingPage() {
     <div className="min-h-screen bg-black text-white">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-90">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div className="container mx-auto px-4 py-4 flex justify-center items-center">
           <Link href="/" className="flex items-center space-x-2">
             <Image
               src="/images/eyeris.png"
@@ -84,7 +84,7 @@ export default function LandingPage() {
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Empower your hands-on profession with smart glasses
           </p>
-          <button className="bg-white text-black px-6 py-3 rounded-full flex items-center mx-auto hover:bg-gray-200 transition-colors text-lg font-semibold">
+          <button className="bg-white text-black px-6 py-3 rounded-full flex items-center justify-center mx-auto hover:bg-gray-200 transition-colors text-lg font-semibold">
             Discover Eyeris <ChevronRight className="ml-2" />
           </button>
         </section>
@@ -116,7 +116,7 @@ export default function LandingPage() {
                   description: "Initiate video calls for real-time expert advice, with the ability to record and save consultation details for future reference."
                 }
               ].map((feature, index) => (
-                <div key={index} className="flex items-start">
+                <div key={index} className="flex items-start justify-center">
                   <div className="text-4xl mr-4 text-purple-400">{feature.icon}</div>
                   <div>
                     <h3 className="text-xl font-semibold mb-2 text-purple-400">{feature.title}</h3>
