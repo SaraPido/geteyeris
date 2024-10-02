@@ -80,7 +80,7 @@ export default function LandingPage() {
       <main className="pt-20">
         {/* Hero Section */}
         <section className="container mx-auto px-4 py-20 text-center">
-          <h1 className="text-8xl font-bold mb-6">Eyeris</h1>
+          <h1 className="text-6xl md:text-8xl font-bold mb-6">Eyeris</h1>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Empower your hands-on profession with smart glasses
           </p>
