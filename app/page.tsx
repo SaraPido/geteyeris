@@ -23,7 +23,7 @@ export default function LandingPage() {
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link href="/" className="flex items-center space-x-2">
             <Image
-              src="/images/eyeris.png"
+              src="/images/eyeris2.png"
               alt="Eyeris Logo"
               width={120}
               height={40}
@@ -81,7 +81,7 @@ export default function LandingPage() {
         <section className="container mx-auto px-4 py-20 text-center">
           <div className="mb-8">
             <Image
-              src="/images/eyeris.png"
+              src="/images/eyeris2.png"
               alt="Eyeris Logo"
               width={300}
               height={100}

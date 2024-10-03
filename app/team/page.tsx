@@ -61,7 +61,7 @@ export default function TeamPage() {
       
       <div className="absolute bottom-4 right-4 w-24 h-24">
         <Image
-          src="/images/eyeris.png"
+          src="/images/eyeris2.png"
           alt="EyeRis Logo"
           width={96}
           height={96}
