@@ -3,11 +3,9 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ChevronRight, Menu } from 'lucide-react'
+import { ChevronRight } from 'lucide-react'
 
 export default function LandingPage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'Features', href: '#features' },
@@ -20,17 +18,18 @@ export default function LandingPage() {
     <div className="min-h-screen bg-black text-white">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-90">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div className="container mx-auto flex justify-between items-center px-6 py-4 max-w-screen-lg">
           <Link href="/" className="flex items-center space-x-2">
             <Image
               src="/images/eyeris.png"
               alt="Eyeris Logo"
-              width={120}
+              width={40}
               height={40}
               className="object-contain"
             />
+            <span className="text-2xl font-bold text-purple-400">Eyeris</span>
           </Link>
-          <nav className="hidden md:flex space-x-6">
+          <nav className="flex space-x-6 text-white">
             {navItems.map((item) => (
               <Link
                 key={item.name}
@@ -41,66 +40,27 @@ export default function LandingPage() {
               </Link>
             ))}
           </nav>
-          <button 
-            className="md:hidden text-white"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <Menu className="h-6 w-6" />
-            <span className="sr-only">Toggle navigation menu</span>
-          </button>
         </div>
       </header>
 
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-90 md:hidden">
-          <div className="flex flex-col items-center justify-center h-full">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-white hover:text-purple-400 transition-colors py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-            <button
-              className="mt-4 text-white hover:text-purple-400 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
-
       {/* Main Content */}
-      <main className="pt-20">
+      <main className="pt-24 flex flex-col items-center">
         {/* Hero Section */}
-        <section className="container mx-auto px-4 py-20 text-center">
-          <div className="mb-8">
-            <Image
-              src="/images/eyeris.png"
-              alt="Eyeris Logo"
-              width={300}
-              height={100}
-              className="object-contain mx-auto"
-            />
-          </div>
+        <section className="flex flex-col items-center justify-center text-center w-full max-w-4xl px-4 py-20">
+          <h1 className="text-6xl md:text-8xl font-bold mb-6">Eyeris</h1>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Empower your hands-on profession with smart glasses
           </p>
-          <button className="bg-white text-black px-6 py-3 rounded-full flex items-center mx-auto hover:bg-gray-200 transition-colors text-lg font-semibold">
+          <button className="bg-white text-black px-6 py-3 rounded-full flex items-center justify-center mx-auto hover:bg-gray-200 transition-colors text-lg font-semibold">
             Discover Eyeris <ChevronRight className="ml-2" />
           </button>
         </section>
 
-        {/* Features Section */}
-        <section id="features" className="py-20 bg-gray-900">
-          <div className="container mx-auto px-4">
+        {/* Key Features Section */}
+        <section id="features" className="py-20 bg-gray-900 w-full flex justify-center">
+          <div className="container max-w-4xl px-4">
             <h2 className="text-4xl font-bold mb-12 text-center">Key Features</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 gap-12">
               {[
                 { 
                   icon: "💬",
@@ -136,10 +96,10 @@ export default function LandingPage() {
         </section>
 
         {/* Industries Section */}
-        <section id="industries" className="py-20">
-          <div className="container mx-auto px-4">
+        <section id="industries" className="py-20 w-full flex justify-center">
+          <div className="container max-w-6xl px-4">
             <h2 className="text-4xl font-bold mb-12 text-center">Industries We Serve</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 { name: "Healthcare", description: "Improve patient care with hands-free access to medical records and expert consultations." },
                 { name: "Manufacturing", description: "Enhance quality control and streamline processes with AI-assisted visual inspections." },
@@ -148,7 +108,7 @@ export default function LandingPage() {
                 { name: "Logistics", description: "Optimize inventory management and order fulfillment with computer vision and AI assistance." },
                 { name: "Education", description: "Facilitate immersive learning experiences and hands-on training with augmented reality." }
               ].map((industry, index) => (
-                <div key={index} className="bg-gray-900 p-6 rounded-lg">
+                <div key={index} className="bg-gray-800 p-6 rounded-lg text-white">
                   <h3 className="text-xl font-semibold mb-2 text-purple-400">{industry.name}</h3>
                   <p className="text-gray-400">{industry.description}</p>
                 </div>
@@ -157,13 +117,14 @@ export default function LandingPage() {
           </div>
         </section>
       </main>
+      
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8">
-        <div className="container mx-auto px-4 text-center">
+      <footer className="bg-gray-900 text-white py-8 w-full flex justify-center">
+        <div className="max-w-4xl text-center">
           <p>&copy; 2023 Eyeris. All rights reserved.</p>
         </div>
       </footer>
     </div>
-  )
+  );
 }
