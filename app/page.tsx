@@ -30,7 +30,7 @@ export default function PrelaunchPage() {
       <header className="p-4 flex justify-between items-center bg-[#010b19]">
         <div className="w-12 h-12">
           <Image
-            src="/images/eyeris_noback.png"
+            src="/images/eyeris.png"
             alt="Eyeris Logo"
             width={48}
             height={48}
@@ -49,7 +49,7 @@ export default function PrelaunchPage() {
         <section className="container mx-auto px-4 py-12">
           <div className="text-center mb-12">
             <Image
-              src="/images/eyeris_noback.png"
+              src="/images/eyeris.png"
               alt="Eyeris Logo"
               width={300}
               height={100}
@@ -60,7 +60,7 @@ export default function PrelaunchPage() {
             </h2>
           </div>
 
-          <div className="flex flex-col md:flex-row items-center md:items-start justify-between">
+          <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="md:w-1/2 mb-8 md:mb-0">
               <Image
                 src="/placeholder.svg?height=400&width=500"
@@ -70,27 +70,29 @@ export default function PrelaunchPage() {
                 className="object-cover rounded-lg"
               />
             </div>
-            <div className="md:w-1/2 md:pl-8">
-              <h2 className="text-3xl font-bold mb-4 text-[#4d9fff]">Be the first!</h2>
-              <form onSubmit={handleSubscribe} className="mb-4">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  className="w-full px-4 py-2 rounded-md bg-[#021a3a] text-white mb-4 border border-[#4d9fff] focus:outline-none focus:border-[#7cb9ff]"
-                  required
-                />
-                <button
-                  type="submit"
-                  className="w-full bg-[#4d9fff] text-white px-6 py-2 rounded-md hover:bg-[#7cb9ff] transition-colors"
-                >
-                  Get the latest news
-                </button>
-              </form>
-              <p className="text-sm text-[#7cb9ff]">
-                You will be kept updated on the news and details
-              </p>
+            <div className="md:w-1/2 md:pl-8 flex flex-col items-center justify-center">
+              <div className="w-full max-w-md">
+                <h2 className="text-3xl font-bold mb-4 text-[#4d9fff] text-center">Be the first!</h2>
+                <form onSubmit={handleSubscribe} className="mb-4">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email"
+                    className="w-full px-4 py-2 rounded-md bg-[#021a3a] text-white mb-4 border border-[#4d9fff] focus:outline-none focus:border-[#7cb9ff]"
+                    required
+                  />
+                  <button
+                    type="submit"
+                    className="w-full bg-[#4d9fff] text-white px-6 py-2 rounded-md hover:bg-[#7cb9ff] transition-colors"
+                  >
+                    Get the latest news
+                  </button>
+                </form>
+                <p className="text-sm text-[#7cb9ff] text-center">
+                  You will be kept updated on the news and details
+                </p>
+              </div>
             </div>
           </div>
         </section>
