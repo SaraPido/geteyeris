@@ -74,7 +74,7 @@ export default function PrelaunchPage() {
             </div>
             <div className="md:w-1/2 md:pl-8 flex flex-col items-center justify-center">
               <div className="w-full max-w-md">
-                <h2 className="text-3xl font-bold mb-4 text-[#4d9fff] text-center">Be the first!</h2>
+                <h2 className="text-3xl mb-4 text-[#4d9fff] text-center">Be the first!</h2>
                 <form onSubmit={handleSubscribe} className="mb-4">
                   <input
                     type="email"
@@ -101,7 +101,7 @@ export default function PrelaunchPage() {
 
         <section id="contact" className="py-16">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-8 text-center text-[#4d9fff]">Contact Us</h2>
+            <h2 className="text-3xl mb-8 text-center text-[#4d9fff]">Contact Us</h2>
             <form onSubmit={handleContact} className="max-w-lg mx-auto">
               <div className="mb-4">
                 <label htmlFor="name" className="block text-sm font-medium text-[#7cb9ff] mb-1">
