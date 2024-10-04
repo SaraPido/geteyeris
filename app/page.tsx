@@ -46,21 +46,24 @@ export default function PrelaunchPage() {
       </header>
   
       <main className="flex-grow">
-        <section className="container mx-auto px-4 py-12">
-          <div className="text-center mb-12">
-            <div className="bg-[#010b19] inline-block p-4 rounded-lg">
-              <Image
-                src="/images/eyeris_noback.png"
-                alt="Eyeris Logo"
-                width={300}
-                height={100}
-                className="object-contain"
-              />
-              <h2 className="text-xl mt-2">
-                Empower your hands-on profession with smart glasses
-              </h2>
-            </div>
-          </div>
+  <section className="container mx-auto px-4 py-12">
+    <div className="flex justify-center mb-12">
+      <div className="bg-[#010b19] inline-block p-4 rounded-lg">
+        <Image
+          src="/images/eyeris_noback.png"
+          alt="Eyeris Logo"
+          width={300}
+          height={100}
+          className="object-contain"
+        />
+        <h2 className="text-xl mt-2 text-center">
+          Empower your hands-on profession with smart glasses
+        </h2>
+      </div>
+    </div>
+  </section>
+</main>
+
 
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="md:w-1/2 mb-8 md:mb-0">
