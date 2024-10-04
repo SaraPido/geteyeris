@@ -155,7 +155,7 @@ export default function PrelaunchPage() {
 
       <footer className="text-white py-8">
         <div className="container mx-auto px-4 text-center">
-          <p>&copy; 2023 Eyeris. All rights reserved.</p>
+          <p>&copy; 2024 Eyeris. All rights reserved.</p>
         </div>
       </footer>
     </div>
