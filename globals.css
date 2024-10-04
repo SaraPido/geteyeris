@@ -22,7 +22,7 @@ body {
   justify-content: center;
   padding: 0;
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: rgb(var(--background-rgb));
   color: rgb(var(--foreground-rgb));
 }
