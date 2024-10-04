@@ -60,9 +60,7 @@ export default function PrelaunchPage() {
           Empower your hands-on profession with smart glasses
         </h2>
       </div>
-    </div>
-  </section>
-</main>
+    
 
 
           <div className="flex flex-col md:flex-row items-center justify-between">
