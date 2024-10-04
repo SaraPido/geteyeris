@@ -5,11 +5,9 @@
 
 :root {
   --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 0, 0, 0;
+  --background-rgb: 1, 11, 25;
+  --accent-rgb: 77, 159, 255;
 }
-
-
 /* Reset global styles */
 * {
   margin: 2;
@@ -25,6 +23,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background-color: black; /* Ensure the black background is applied */
-  color: white; /* Ensure text is white */
+  background-color: rgb(var(--background-rgb));
+  color: rgb(var(--foreground-rgb));
 }
+
