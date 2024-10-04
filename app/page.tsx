@@ -44,11 +44,11 @@ export default function PrelaunchPage() {
           </ul>
         </nav>
       </header>
-
+  
       <main className="flex-grow">
         <section className="container mx-auto px-4 py-12">
           <div className="text-center mb-12">
-            <div className="inline-block">
+            <div className="bg-[#010b19] inline-block p-4 rounded-lg">
               <Image
                 src="/images/eyeris_noback.png"
                 alt="Eyeris Logo"
