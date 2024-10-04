@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { ChevronRight } from 'lucide-react'
+import Link from 'next/link'
 
 export default function PrelaunchPage() {
   const [email, setEmail] = useState('')
@@ -26,64 +26,82 @@ export default function PrelaunchPage() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col">
+    <div className="min-h-screen bg-[#010b19] text-white flex flex-col">
+      <header className="p-4 flex justify-between items-center bg-[#010b19]">
+        <div className="w-12 h-12">
+          <Image
+            src="/images/eyeris.png"
+            alt="Eyeris Logo"
+            width={48}
+            height={48}
+            className="object-contain"
+          />
+        </div>
+        <nav>
+          <ul className="flex space-x-4">
+            <li><Link href="/" className="text-[#4d9fff] hover:text-[#7cb9ff] transition-colors">Home</Link></li>
+            <li><Link href="#contact" className="text-[#4d9fff] hover:text-[#7cb9ff] transition-colors">Contact</Link></li>
+          </ul>
+        </nav>
+      </header>
+
       <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="container mx-auto px-4 py-20 text-center">
-          <div className="mb-12">
+        <section className="container mx-auto px-4 py-12">
+          <div className="text-center mb-12">
             <Image
               src="/images/eyeris.png"
               alt="Eyeris Logo"
-              width={400}
-              height={133}
+              width={300}
+              height={100}
               className="object-contain mx-auto"
             />
+            <h2 className="text-xl mt-4 text-[#7cb9ff]">
+              Empower your hands-on profession with smart glasses
+            </h2>
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Coming Soon</h1>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Empower your hands-on profession with smart glasses
-          </p>
-          <div className="mb-12">
-            <Image
-              src="/placeholder.svg?height=300&width=600"
-              alt="Eyeris Smart Glasses"
-              width={600}
-              height={300}
-              className="object-cover mx-auto rounded-lg"
-            />
-          </div>
-          <div className="max-w-md mx-auto">
-            <h2 className="text-2xl font-bold mb-4">Be the first!</h2>
-            <form onSubmit={handleSubscribe} className="flex flex-col md:flex-row gap-4">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
-                className="flex-grow px-4 py-2 rounded-md bg-gray-800 text-white"
-                required
+
+          <div className="flex flex-col md:flex-row items-center md:items-start justify-between">
+            <div className="md:w-1/2 mb-8 md:mb-0">
+              <Image
+                src="/placeholder.svg?height=400&width=500"
+                alt="Eyeris Smart Glasses"
+                width={500}
+                height={400}
+                className="object-cover rounded-lg"
               />
-              <button
-                type="submit"
-                className="bg-purple-600 text-white px-6 py-2 rounded-md hover:bg-purple-700 transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
-            <p className="text-sm text-gray-400 mt-2">
-              You will be kept updated on the news and details
-            </p>
+            </div>
+            <div className="md:w-1/2 md:pl-8">
+              <h2 className="text-3xl font-bold mb-4 text-[#4d9fff]">Be the first!</h2>
+              <form onSubmit={handleSubscribe} className="mb-4">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  className="w-full px-4 py-2 rounded-md bg-[#021a3a] text-white mb-4 border border-[#4d9fff] focus:outline-none focus:border-[#7cb9ff]"
+                  required
+                />
+                <button
+                  type="submit"
+                  className="w-full bg-[#4d9fff] text-white px-6 py-2 rounded-md hover:bg-[#7cb9ff] transition-colors"
+                >
+                  Get the latest news
+                </button>
+              </form>
+              <p className="text-sm text-[#7cb9ff]">
+                You will be kept updated on the news and details
+              </p>
+            </div>
           </div>
         </section>
       </main>
 
-      {/* Contact Section */}
-      <section id="contact" className="bg-gray-900 py-16">
+      <section id="contact" className="bg-[#021a3a] py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">Contact Us</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center text-[#4d9fff]">Contact Us</h2>
           <form onSubmit={handleContact} className="max-w-lg mx-auto">
             <div className="mb-4">
-              <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-1">
+              <label htmlFor="name" className="block text-sm font-medium text-[#7cb9ff] mb-1">
                 Name
               </label>
               <input
@@ -91,12 +109,12 @@ export default function PrelaunchPage() {
                 id="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full px-4 py-2 rounded-md bg-gray-800 text-white"
+                className="w-full px-4 py-2 rounded-md bg-[#010b19] text-white border border-[#4d9fff] focus:outline-none focus:border-[#7cb9ff]"
                 required
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-1">
+              <label htmlFor="email" className="block text-sm font-medium text-[#7cb9ff] mb-1">
                 Email
               </label>
               <input
@@ -104,12 +122,12 @@ export default function PrelaunchPage() {
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-2 rounded-md bg-gray-800 text-white"
+                className="w-full px-4 py-2 rounded-md bg-[#010b19] text-white border border-[#4d9fff] focus:outline-none focus:border-[#7cb9ff]"
                 required
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-1">
+              <label htmlFor="message" className="block text-sm font-medium text-[#7cb9ff] mb-1">
                 Message
               </label>
               <textarea
@@ -117,13 +135,13 @@ export default function PrelaunchPage() {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 rows={4}
-                className="w-full px-4 py-2 rounded-md bg-gray-800 text-white"
+                className="w-full px-4 py-2 rounded-md bg-[#010b19] text-white border border-[#4d9fff] focus:outline-none focus:border-[#7cb9ff]"
                 required
               ></textarea>
             </div>
             <button
               type="submit"
-              className="w-full bg-purple-600 text-white px-6 py-2 rounded-md hover:bg-purple-700 transition-colors"
+              className="w-full bg-[#4d9fff] text-white px-6 py-2 rounded-md hover:bg-[#7cb9ff] transition-colors"
             >
               Send Message
             </button>
@@ -131,8 +149,7 @@ export default function PrelaunchPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-black text-white py-8">
+      <footer className="bg-[#010b19] text-white py-8">
         <div className="container mx-auto px-4 text-center">
           <p>&copy; 2023 Eyeris. All rights reserved.</p>
         </div>
