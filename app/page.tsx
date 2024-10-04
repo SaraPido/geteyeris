@@ -30,7 +30,7 @@ export default function PrelaunchPage() {
       <header className="p-4 flex justify-between items-center bg-[#010b19]">
         <div className="w-12 h-12">
           <Image
-            src="/images/eyeris.png"
+            src="/images/eyeris_noback.png"
             alt="Eyeris Logo"
             width={48}
             height={48}
@@ -49,7 +49,7 @@ export default function PrelaunchPage() {
         <section className="container mx-auto px-4 py-12">
           <div className="text-center mb-12">
             <Image
-              src="/images/eyeris.png"
+              src="/images/eyeris_noback.png"
               alt="Eyeris Logo"
               width={300}
               height={100}
