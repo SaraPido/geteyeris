@@ -23,7 +23,7 @@ export default function LandingPage() {
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link href="/" className="flex items-center space-x-2">
             <Image
-              src="/images/eyeris2.png"
+              src="/images/eyeris_noback.png"
               alt="Eyeris Logo"
               width={120}
               height={40}
@@ -81,7 +81,7 @@ export default function LandingPage() {
         <section className="container mx-auto px-4 py-20 text-center">
           <div className="mb-8">
             <Image
-              src="/images/eyeris2.png"
+              src="/images/eyeris_noback.png"
               alt="Eyeris Logo"
               width={300}
               height={100}
@@ -161,7 +161,7 @@ export default function LandingPage() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8">
         <div className="container mx-auto px-4 text-center">
-          <p>&copy; 2023 Eyeris. All rights reserved.</p>
+          <p>&copy; 2024 Eyeris. All rights reserved.</p>
         </div>
       </footer>
     </div>
