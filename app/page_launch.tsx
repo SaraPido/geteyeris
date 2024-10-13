@@ -59,7 +59,7 @@ export default function PrelaunchPage() {
         <h2 className="text-xl mt-2 text-center">
           Empower your hands-on profession with smart glasses
         </h2>
-      </div>
+      </div></div>
     
 
 
